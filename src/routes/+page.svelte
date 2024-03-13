@@ -1,10 +1,13 @@
-<nav id="header">
-	<a href="/">Posts</a>
-	<a href="/about">About</a>
-	<a href="/contact">Contact</a>
-</nav>
+<header>
+	<nav id="header">
+		<a href="/">Posts</a>
+		<a href="/about">About</a>
+		<a href="/contact">Contact</a>
+	</nav>
+</header>
 
 <div id="content">
+	<h1>Lorem Ipsum</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra eleifend tortor eget
 		ullamcorper. Nulla id neque non diam porta molestie. Curabitur augue felis, mattis a mattis id,
@@ -27,6 +30,7 @@
 		Nullam nisl massa, malesuada eu sem sit amet, scelerisque gravida lorem. Suspendisse potenti.
 		Suspendisse massa lectus, volutpat et faucibus id, imperdiet in ante.
 	</p>
+	<h2>Etiam et Ultricies</h2>
 	<p>
 		Etiam et ultricies nisi. Fusce sed auctor est, et vestibulum tellus. In egestas arcu sit amet
 		ante faucibus elementum. Nunc sagittis magna id mi facilisis, vitae tempus nunc eleifend. Fusce
@@ -98,78 +102,129 @@
 		felis. Suspendisse hendrerit, erat vel tristique malesuada, nibh eros cursus nulla, eget
 		fermentum dolor odio ut augue. Cras hendrerit mauris vel neque rhoncus rutrum. Donec sed lacus
 		ex. Maecenas sollicitudin, diam eu aliquam ornare, diam velit mattis nisi, at ultrices ligula
-		nisi tincidunt purus. Ut lobortis interdum mauris vel rutrum
+		nisi tincidunt purus. Ut lobortis interdum mauris vel rutrum.
 	</p>
 </div>
 
 <div id="footer">
-	<a href="https://code.lthoerner.com/">Visit my GitHub</a>
+	<p>© 2024 Lowell Thoerner</p>
+	<a href="https://code.lthoerner.com/">GitHub</a>
+	<a href="https://lthoerner.com/">Personal Site</a>
 </div>
 
 <style lang="scss">
+	// Define configuration variables
+	:root {
+		--primary-color: indigo;
+		--background-color: black;
+		--muted-color: gray;
+		--font-color: white;
+		--font-family: system-ui;
+		--font-size-4: 48px;
+		--font-size-3: 36px;
+		--font-size-2: 24px;
+		--font-size-1: 18px;
+		--font-weight-bold: 600;
+		--side-padding: 24vw;
+	}
+
 	:global(body) {
 		margin: 0;
 		background-color: black;
 	}
 
-	#header {
+	// Clear most default text styles and apply general custom ones
+	p,
+	h1,
+	h2,
+	a {
+		font-family: system-ui;
+		font-weight: normal;
+		text-decoration: none;
+		margin: 0;
+		letter-spacing: 0.01em;
+		word-spacing: 0.1em;
+		color: white;
+	}
+
+	p {
+		font-size: var(--font-size-2);
+	}
+
+	header {
 		position: sticky;
 		top: 0;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		background-color: indigo;
-		height: 130px;
 
-		a {
+		nav {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			align-items: center;
-			width: 200px;
-			text-decoration: none;
-			font-weight: 500;
-			font-size: 40px;
-			transition: 0.23s ease-out;
+			background-color: indigo;
+			height: 130px;
 
-			&:hover {
-				transform: scale(1.06);
+			a {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				width: 200px;
+				text-decoration: none;
+				font-weight: var(--font-weight-bold);
+				font-size: var(--font-size-3);
 				transition: 0.23s ease-out;
+
+				&:hover {
+					transform: scale(1.06);
+					transition: 0.23s ease-out;
+				}
 			}
 		}
 	}
 
 	#content {
-		margin-top: 50px;
-		padding-left: 24vw;
-		padding-right: 24vw;
+		padding-top: 50px;
+		padding-bottom: 40px;
+		padding-left: var(--side-padding);
+		padding-right: var(--side-padding);
 		text-align: justify;
+
+		h1 {
+			margin-bottom: 20px;
+			font-size: var(--font-size-4);
+			font-weight: var(--font-weight-bold);
+			letter-spacing: 0.05em;
+		}
+
+		h2 {
+			margin-top: 20px;
+			margin-bottom: 15px;
+			font-size: var(--font-size-3);
+			font-weight: var(--font-weight-bold);
+		}
+
+		p {
+			margin-bottom: 10px;
+			font-size: var(--font-size-2);
+			line-height: 1.6;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	#footer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		gap: 20px;
 		height: 100px;
 		width: 100%;
+		background-color: var(--muted-color);
 
 		a {
-			text-decoration: none;
-			font-size: 24px;
+			font-size: var(--font-size-2);
 			line-height: 100px;
 		}
-	}
-
-	p,
-	a {
-		font-family: system-ui;
-		color: white;
-	}
-
-	p {
-		margin-top: 0;
-		margin-bottom: 10px;
-		font-size: 24px;
-		line-height: 1.6;
 	}
 </style>
